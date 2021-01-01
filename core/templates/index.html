@@ -1,0 +1,164 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row gap-20 masonry pos-r">
+      <div class="masonry-sizer col-md-6"></div>
+      <div class="masonry-item w-100">
+        <div class="row gap-20">
+
+          <!-- VOLUMEN TOTAL CONTADOR ==================== -->
+          <div class="col-md-4">
+            <div class="layers bd bgc-white p-20">
+              <div class="layer w-100 mB-10">
+                <h5 class="lh-1">Volumen Total</h5>
+              </div>
+              <div class="layer w-100">
+                <div class="peers ai-sb fxw-nw mb-2">
+                  <div class="peer peer-greed">
+                    <h7>Moneda Nacional (S/.)</h7>
+                  </div>
+                  <div class="peer">
+                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">{{overallCount}}</span>
+                  </div>
+                </div>
+                <div class="peers ai-sb fxw-nw">
+                  <div class="peer peer-greed">
+                    <h7>Moneda Extranjera ($)</h7>
+                  </div>
+                  <div class="peer">
+                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">{{overallCount}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- #Total Page Views ==================== -->
+          <div class="col-md-4">
+            <div class="layers bd bgc-white p-20">
+              <div class="layer w-100 mB-10">
+                <h5 class="lh-1">Transacciones Totales</h5>
+              </div>
+              <div class="layer w-100">
+                <div class="peers ai-sb fxw-nw mb-2">
+                  <div class="peer peer-greed">
+                    <h7>Moneda Nacional (S/.)</h7>
+                  </div>
+                  <div class="peer">
+                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-yellow-800">{{overallCount}}</span>
+                  </div>
+                </div>
+                <div class="peers ai-sb fxw-nw">
+                  <div class="peer peer-greed">
+                    <h7>Moneda Extranjera ($)</h7>
+                  </div>
+                  <div class="peer">
+                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-yellow-800">{{overallCount}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- #Unique Visitors ==================== -->
+          <div class="col-md-4">
+            <div class="layers bd bgc-white p-20">
+              <div class="layer w-100 mB-10">
+                <h5 class="lh-1">Ganancias Totales</h5>
+              </div>
+              <div class="layer w-100">
+                <div class="peers ai-sb fxw-nw mb-2">
+                  <div class="peer peer-greed">
+                    <h7>Moneda Nacional (S/.)</h7>
+                  </div>
+                  <div class="peer">
+                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500" >{{overallCount}}</span>
+                  </div>
+                </div>
+                <div class="peers ai-sb fxw-nw">
+                  <div class="peer peer-greed">
+                    <h7>Moneda Extranjera ($)</h7>
+                  </div>
+                  <div class="peer">
+                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">{{overallCount}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="masonry-item col-12">
+      
+      </div>
+      <div class="masonry-item col-md-12">
+        <!-- #Monthly Stats ==================== -->
+        <div class="bd bgc-white">
+          <div class="layers">
+            <div class="layer w-100 pX-20 pT-20">
+              <h6 class="lh-1">Evolutivo Volumen de Ventas</h6>
+            </div>
+            <div class="layer w-100 p-20">
+              <canvas id="line-chart-vv" style="display: block; width: 1415px; height: 707px;" width="1415" height="707" class="chartjs-render-monitor"></canvas>
+            </div>
+            <div class="layer bdT p-20 w-100">
+              <div class="peers ai-c jc-c gapX-20">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="masonry-item col-md-12">
+        <!-- #Monthly Stats ==================== -->
+        <div class="bd bgc-white">
+          <div class="layers">
+            <div class="layer w-100 pX-20 pT-20">
+              <h6 class="lh-1">Evolutivo Transacciones</h6>
+            </div>
+            <div class="layer w-100 p-20">
+              <canvas id="line-chart-et" style="display: block; width: 1415px; height: 707px;" width="1415" height="707" class="chartjs-render-monitor"></canvas>
+            </div>
+            <div class="layer bdT p-20 w-100">
+              <div class="peers ai-c jc-c gapX-20">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="masonry-item col-md-12">
+        <!-- #Monthly Stats ==================== -->
+        <div class="bd bgc-white">
+          <div class="layers">
+            <div class="layer w-100 pX-20 pT-20">
+              <h6 class="lh-1">Evolutivo INOF </h6>
+            </div>
+            <div class="layer w-100 p-20">
+              <canvas id="line-chart-eg" style="display: block; width: 1415px; height: 707px;" width="1415" height="707" class="chartjs-render-monitor"></canvas>
+            </div>
+            <div class="layer bdT p-20 w-100">
+              <div class="peers ai-c jc-c gapX-20">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+            
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
