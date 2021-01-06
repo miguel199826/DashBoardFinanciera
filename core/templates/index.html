@@ -13,26 +13,29 @@
         <div class="row gap-20">
 
           <!-- VOLUMEN TOTAL CONTADOR ==================== -->
-          <div class="col-md-4">
-            <div class="layers bd bgc-white p-20">
-              <div class="layer w-100 mB-10">
-                <h5 class="lh-1">Volumen Total</h5>
-              </div>
-              <div class="layer w-100">
-                <div class="peers ai-sb fxw-nw mb-2">
-                  <div class="peer peer-greed">
-                    <h7>Moneda Nacional (S/.)</h7>
-                  </div>
-                  <div class="peer">
-                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">{{overallCount}}</span>
-                  </div>
+          <div class="col-md-4 ">
+            <div class="card-vol-vtas border border-success rounded">
+              <div class="layers bd bgc-white p-20">
+                <div class="layer w-100 mB-10">
+                  <h5 class="lh-1">Volumen Total</h5>
                 </div>
-                <div class="peers ai-sb fxw-nw">
-                  <div class="peer peer-greed">
-                    <h7>Moneda Extranjera ($)</h7>
+                <div class="layer w-100">
+                  <div class="peers ai-sb fxw-nw mb-2">
+                    <div class="peer peer-greed">
+                      <h7>Moneda Nacional (S/.)</h7>
+                    </div>
+                    <div class="peer">
+                      <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">{{overallCount}}</span>
+                    </div>
                   </div>
-                  <div class="peer">
-                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">{{overallCount}}</span>
+                  <div class="peers ai-sb fxw-nw">
+                    <div class="peer peer-greed">
+                      <h7>Moneda Extranjera </h7> 
+                      <i class="c-green-800 ti-money"></i>
+                    </div>
+                    <div class="peer">
+                      <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">{{overallCount}}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -40,26 +43,28 @@
           </div>
 
           <!-- #Total Page Views ==================== -->
-          <div class="col-md-4">
-            <div class="layers bd bgc-white p-20">
-              <div class="layer w-100 mB-10">
-                <h5 class="lh-1">Transacciones Totales</h5>
-              </div>
-              <div class="layer w-100">
-                <div class="peers ai-sb fxw-nw mb-2">
-                  <div class="peer peer-greed">
-                    <h7>Moneda Nacional (S/.)</h7>
-                  </div>
-                  <div class="peer">
-                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-yellow-800">{{overallCount}}</span>
-                  </div>
+          <div class="col-md-4 border">
+            <div class="card-tran-tot border border-warning rounded">
+              <div class="layers bd bgc-white p-20">
+                <div class="layer w-100 mB-10">
+                  <h5 class="lh-1">Transacciones Totales</h5>
                 </div>
-                <div class="peers ai-sb fxw-nw">
-                  <div class="peer peer-greed">
-                    <h7>Moneda Extranjera ($)</h7>
+                <div class="layer w-100">
+                  <div class="peers ai-sb fxw-nw mb-2">
+                    <div class="peer peer-greed">
+                      <h7>Moneda Nacional (S/.)</h7>
+                    </div>
+                    <div class="peer">
+                      <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-yellow-800">{{overallCount}}</span>
+                    </div>
                   </div>
-                  <div class="peer">
-                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-yellow-800">{{overallCount}}</span>
+                  <div class="peers ai-sb fxw-nw">
+                    <div class="peer peer-greed">
+                      <h7>Moneda Extranjera ($)</h7>
+                    </div>
+                    <div class="peer">
+                      <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-yellow-800">{{overallCount}}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -68,25 +73,27 @@
 
           <!-- #Unique Visitors ==================== -->
           <div class="col-md-4">
-            <div class="layers bd bgc-white p-20">
-              <div class="layer w-100 mB-10">
-                <h5 class="lh-1">Ganancias Totales</h5>
-              </div>
-              <div class="layer w-100">
-                <div class="peers ai-sb fxw-nw mb-2">
-                  <div class="peer peer-greed">
-                    <h7>Moneda Nacional (S/.)</h7>
-                  </div>
-                  <div class="peer">
-                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500" >{{overallCount}}</span>
-                  </div>
+            <div class="card-gan-tot border border-danger rounded"> 
+              <div class="layers bd bgc-white p-20">
+                <div class="layer w-100 mB-10">
+                  <h5 class="lh-1">Ganancias Totales</h5>
                 </div>
-                <div class="peers ai-sb fxw-nw">
-                  <div class="peer peer-greed">
-                    <h7>Moneda Extranjera ($)</h7>
+                <div class="layer w-100">
+                  <div class="peers ai-sb fxw-nw mb-2">
+                    <div class="peer peer-greed">
+                      <h7>Moneda Nacional (S/.)</h7>
+                    </div>
+                    <div class="peer">
+                      <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500" >{{overallCount}}</span>
+                    </div>
                   </div>
-                  <div class="peer">
-                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">{{overallCount}}</span>
+                  <div class="peers ai-sb fxw-nw">
+                    <div class="peer peer-greed">
+                      <h7>Moneda Extranjera ($)</h7>
+                    </div>
+                    <div class="peer">
+                      <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">{{overallCount}}</span>
+                    </div>
                   </div>
                 </div>
               </div>
