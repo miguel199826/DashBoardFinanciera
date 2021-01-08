@@ -189,25 +189,55 @@
 
           // The data for our dataset
           data: {
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
               datasets: [{
-                  label: 'My First dataset',
+                  label: 'Año 2019',
                   backgroundColor: 'rgb(255, 99, 132)',
                   borderColor: 'rgb(255, 99, 132)',
-                  data: [2, 10, 5, 2, 20, 30, 45],
+                  data: [0, 0, 0, 0, 0, 57, 234, 180, 186, 189, 174, 675],
                   fill: false,
                 },
                 {
-                  label: 'My Second dataset',
+                  label: 'Año 2020',
                   fill: false,
                   backgroundColor: 'rgb(185, 99, 255)',
                   borderColor: 'rgb(185, 99, 255)',
-                  data: [24, 13, 32, 12, 30, 50, 65],
+                  data: [375, 447, 426, 630, 783, 2652, 4005, 4560, 6009, 4476, 6426, 2976],
                 }]
           },
 
           // Configuration options go here
-          options: {}
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Evolutivo Transacciones'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: false,
+            },
+            scales:{
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Mes'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Transacciones'
+                }
+              }]
+            }
+          }
       });
     </script>
 
@@ -219,25 +249,55 @@
 
           // The data for our dataset
           data: {
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
               datasets: [{
-                  label: 'My First dataset',
+                  label: 'Año 2019',
                   backgroundColor: 'rgb(255, 99, 132)',
                   borderColor: 'rgb(255, 99, 132)',
-                  data: [2, 10, 5, 2, 20, 30, 45],
+                  data: [0, 0, 0, 0, 0, 120, 576, 324, 276, 392, 200, 1900],
                   fill: false,
                 },
                 {
-                  label: 'My Second dataset',
+                  label: 'Año 2020',
                   fill: false,
                   backgroundColor: 'rgb(185, 99, 255)',
                   borderColor: 'rgb(185, 99, 255)',
-                  data: [24, 13, 32, 12, 30, 50, 65],
+                  data: [1548, 1264, 876, 368, 396, 968, 3024, 3180, 3680, 2516, 4788, 2408],
                 }]
           },
 
           // Configuration options go here
-          options: {}
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Evolutivo Ganancias Totales'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: false,
+            },
+            scales:{
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Mes'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Ganancias'
+                }
+              }]
+            }
+          }
       });
     </script>
 
