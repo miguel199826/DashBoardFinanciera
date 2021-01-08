@@ -47,7 +47,7 @@
           </div>
 
           <!-- #Total Page Views ==================== -->
-          <div class="col-md-4 border">
+          <div class="col-md-4">
             <div class="card-tran-tot border border-warning rounded">
               <div class="layers bd bgc-white p-20">
                 <div class="layer w-100 mB-10">
@@ -118,15 +118,6 @@
             </div>
             <div class="layer w-100 p-20">
               <canvas id="line-chart-vv" style="display: block; width: 1415px; height: 707px;" width="1415" height="707" class="chartjs-render-monitor"></canvas>
-            </div>
-            <div class="col-md-12 row" style="float: left;">
-              {% for mn in monthNames %}
-                <table style="border-width: 2px; border: #333;">
-                  <tr>
-                    <input type="submit" class="mr-4 ml-1 " onclick="return showChart();" value={{mn}} name="countryName" style="width:100px;">
-                  </tr>
-                </table>
-              {% endfor %}
             </div>
             <div class="layer bdT p-20 w-100">
               <div class="peers ai-c jc-c gapX-20">
