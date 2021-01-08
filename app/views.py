@@ -32,6 +32,9 @@ def pages(request):
         html_template = loader.get_template( 'page-500.html' )
         return HttpResponse(html_template.render(context, request))
 
+
+#DATA FINANCIERA
+
 def index(request):
     confirmedGlobal=pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv',encoding='utf-8',na_values=None)
     # deathGLobal=pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
@@ -40,7 +43,8 @@ def index(request):
     contryNames,countsVal,logVals,overallCount,dataForMapGraph,maxVal=getBarData(confirmedGlobal,uniqueCountryNames)
     dataForheatMap,dateCat=getHeatMapData(confirmedGlobal,contryNames)
     datasetForLine,axisvalues=getLinebarGroupData(confirmedGlobal,uniqueCountryNames)
-    context={'dateCat':dateCat,'dataForheatMap':dataForheatMap,'maxVal':maxVal,'dataForMapGraph':dataForMapGraph,'axisvalues':axisvalues,'datasetForLine':datasetForLine,'uniqueCountryNames':uniqueCountryNames,'contryNames':contryNames,'countsVal':countsVal,'logVals':logVals,'overallCount':overallCount}
+    monthNames=['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+    context={'dateCat':dateCat,'dataForheatMap':dataForheatMap,'maxVal':maxVal,'dataForMapGraph':dataForMapGraph,'axisvalues':axisvalues,'datasetForLine':datasetForLine,'uniqueCountryNames':uniqueCountryNames,'contryNames':contryNames,'countsVal':countsVal,'logVals':logVals,'overallCount':overallCount, 'monthNames': monthNames}
     return render(request,'index.html',context)
     
 

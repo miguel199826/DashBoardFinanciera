@@ -129,25 +129,55 @@
 
           // The data for our dataset
           data: {
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
               datasets: [{
-                  label: 'My First dataset',
+                  label: 'Año 2019',
                   backgroundColor: 'rgb(255, 99, 132)',
                   borderColor: 'rgb(255, 99, 132)',
-                  data: [2, 10, 5, 2, 20, 30, 45],
+                  data: [0, 0, 0, 0, 0, 2.56, 8.78, 6.25, 6.85, 6.81, 6.49, 14.65],
                   fill: false,
                 },
                 {
-                  label: 'My Second dataset',
+                  label: 'Año 2020',
                   fill: false,
                   backgroundColor: 'rgb(185, 99, 255)',
                   borderColor: 'rgb(185, 99, 255)',
-                  data: [24, 13, 32, 12, 30, 50, 65],
+                  data: [6.4, 82.57, 75.82, 24.89, 87.39, 273.82, 514.38, 473.95, 804.13, 567.18, 857.48, 409.05],
                 }]
           },
 
           // Configuration options go here
-          options: {}
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Evolutivo Volumen Ventas'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: false,
+            },
+            scales:{
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Mes'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Ventas (Millones)'
+                }
+              }]
+            }
+          }
       });
     </script>
 

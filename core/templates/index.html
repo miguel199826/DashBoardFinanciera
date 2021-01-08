@@ -3,7 +3,11 @@
 {% block title %} Dashboard {% endblock title %}
 
 <!-- Specific CSS goes HERE  -->
-{% block stylesheets %}{% endblock stylesheets %}
+{% block stylesheets %}
+  <style>
+    
+  </style>
+{% endblock stylesheets %}
 
 {% block content %}
 
@@ -13,16 +17,16 @@
         <div class="row gap-20">
 
           <!-- VOLUMEN TOTAL CONTADOR ==================== -->
-          <div class="col-md-4 ">
+          <div class="col-md-4 card-1">
             <div class="card-vol-vtas border border-success rounded">
               <div class="layers bd bgc-white p-20">
                 <div class="layer w-100 mB-10">
-                  <h5 class="lh-1">Volumen Total</h5>
+                  <h5 class="lh-1 vt-text">Volumen Total</h5>
                 </div>
                 <div class="layer w-100">
                   <div class="peers ai-sb fxw-nw mb-2">
                     <div class="peer peer-greed">
-                      <h7>Moneda Nacional (S/.)</h7>
+                      <h7>Moneda Nacional S/.</h7>
                     </div>
                     <div class="peer">
                       <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">{{overallCount}}</span>
@@ -114,6 +118,15 @@
             </div>
             <div class="layer w-100 p-20">
               <canvas id="line-chart-vv" style="display: block; width: 1415px; height: 707px;" width="1415" height="707" class="chartjs-render-monitor"></canvas>
+            </div>
+            <div class="col-md-12 row" style="float: left;">
+              {% for mn in monthNames %}
+                <table style="border-width: 2px; border: #333;">
+                  <tr>
+                    <input type="submit" class="mr-4 ml-1 " onclick="return showChart();" value={{mn}} name="countryName" style="width:100px;">
+                  </tr>
+                </table>
+              {% endfor %}
             </div>
             <div class="layer bdT p-20 w-100">
               <div class="peers ai-c jc-c gapX-20">
