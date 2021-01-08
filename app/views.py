@@ -36,18 +36,29 @@ def pages(request):
 #DATA FINANCIERA
 
 def index(request):
-    confirmedGlobal=pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv',encoding='utf-8',na_values=None)
+    #IMPORTANTDO DATA
+    # confirmedGlobal=pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv',encoding='utf-8',na_values=None)
     # deathGLobal=pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
     # recoverGlobal=pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv')
-    uniqueCountryNames=pd.unique(confirmedGlobal['Country/Region'])
-    contryNames,countsVal,logVals,overallCount,dataForMapGraph,maxVal=getBarData(confirmedGlobal,uniqueCountryNames)
-    dataForheatMap,dateCat=getHeatMapData(confirmedGlobal,contryNames)
-    datasetForLine,axisvalues=getLinebarGroupData(confirmedGlobal,uniqueCountryNames)
+    #uniqueCountryNames=pd.unique(confirmedGlobal['Country/Region'])
+    #contryNames,countsVal,logVals,overallCount,dataForMapGraph,maxVal=getBarData(confirmedGlobal,uniqueCountryNames)
+    #dataForheatMap,dateCat=getHeatMapData(confirmedGlobal,contryNames)
+    #datasetForLine,axisvalues=getLinebarGroupData(confirmedGlobal,uniqueCountryNames)
+    
+    ##variables##
     monthNames=['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
-    context={'dateCat':dateCat,'dataForheatMap':dataForheatMap,'maxVal':maxVal,'dataForMapGraph':dataForMapGraph,'axisvalues':axisvalues,'datasetForLine':datasetForLine,'uniqueCountryNames':uniqueCountryNames,'contryNames':contryNames,'countsVal':countsVal,'logVals':logVals,'overallCount':overallCount, 'monthNames': monthNames}
+    tranMN='35,049'
+    tranME=411
+    vvMN='3,883'
+    vvME='3,464'
+    ganMN='28,328'
+    ganME=476
+    #context={'dateCat':dateCat,'dataForheatMap':dataForheatMap,'maxVal':maxVal,'dataForMapGraph':dataForMapGraph,'axisvalues':axisvalues,'datasetForLine':datasetForLine,'uniqueCountryNames':uniqueCountryNames,'contryNames':contryNames,'countsVal':countsVal,'logVals':logVals,'overallCount':overallCount, 'monthNames': monthNames}
+    context={'monthNames': monthNames, 'tranMN':tranMN,'tranME':tranME,'vvMN':vvMN,'vvME':vvME,'ganMN':ganMN,'ganME':ganME}
     return render(request,'index.html',context)
     
 
+"""
 def getBarData(confirmedGlobal,uniqueCountryNames):
     df2=confirmedGlobal[list(confirmedGlobal.columns[1:2])+list([confirmedGlobal.columns[-2]])]
     df2.columns=['Country/Region','values']
@@ -61,8 +72,9 @@ def getBarData(confirmedGlobal,uniqueCountryNames):
     # dictVal=[]
     # for i in range(df2.shape[0]):
     #     dictVal.append(dict(df2.ix[i]))
-    return (contryNames,countsVal,logVals,overallCount,dataForMapGraph,maxVal)
-
+    return (contryNames,countsVal,logVals,overallCount,dataForMapGraph,maxVal) 
+"""
+"""
 def getLinebarGroupData(confirmedGlobal,uniqueCountryNames):
     colNames=confirmedGlobal.columns[4:-1]
     datasetsForLine=[]
@@ -73,7 +85,8 @@ def getLinebarGroupData(confirmedGlobal,uniqueCountryNames):
         temp['data']=confirmedGlobal[confirmedGlobal['Country/Region']==i][colNames].sum().values.tolist()
         datasetsForLine.append(temp)
     return datasetsForLine,list(range(len(colNames)))
-
+"""
+"""
 def getDataforMap(uniqueCOuntryName,df2):
     dataForMap=[]
     for i in uniqueCOuntryName:
@@ -89,8 +102,8 @@ def getDataforMap(uniqueCOuntryName,df2):
             pass
     print (len(dataForMap))
     return dataForMap
-
-
+"""
+"""
 def getHeatMapData(confirmedGlobal,contryNames):
     df3=confirmedGlobal[list(confirmedGlobal.columns[1:2])+list(list(confirmedGlobal.columns.values)[-6:-1])]
     dataForheatMap=[]
@@ -105,8 +118,8 @@ def getHeatMapData(confirmedGlobal,contryNames):
             pass
     dateCat=list(list(confirmedGlobal.columns.values)[-6:-1])
     return dataForheatMap,dateCat
-
-
+"""
+"""
 def drillDownACountry(request):
     print (request.POST.dict())
     countryName=request.POST.get('countryName')
@@ -126,3 +139,4 @@ def drillDownACountry(request):
     context=context={"countryName":countryName,'axisvalues':axisvalues,'datasetsForLine':datasetsForLine,'dateCat':dateCat,'dataForheatMap':dataForheatMap,'maxVal':maxVal,'dataForMapGraph':dataForMapGraph,'uniqueCountryNames':uniqueCountryNames,'contryNames':contryNames,'countsVal':countsVal,'logVals':logVals,'overallCount':overallCount}
 
     return render(request,'index2.html',context)
+"""
