@@ -121,7 +121,7 @@
     <!-- Specific Page JS goes HERE -->
     {% block javascripts %}{% endblock javascripts %}
     
-
+    <!--CHART VOLUMEN VENTAS-->
     <script>
       var ctx = document.getElementById('line-chart-vv').getContext('2d');
       var chart = new Chart(ctx, {
@@ -181,7 +181,8 @@
           }
       });
     </script>
- 
+
+    <!--CHART EVOLUTIVO TRANSACCION-->
     <script>
       var ctx = document.getElementById('line-chart-et').getContext('2d');
       var chart = new Chart(ctx, {
@@ -192,18 +193,18 @@
           data: {
               labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
               datasets: [{
-                  label: '2019',
+                  label: 'Año 2019',
                   backgroundColor: 'rgb(255, 99, 132)',
                   borderColor: 'rgb(255, 99, 132)',
-                  data: [0, 0, 0, 0, 0, 57,0, 234.0, 180.0, 186.0, 189.0, 174.0, 675.0],
+                  data: [0, 0, 0, 0, 0, 57, 234, 180, 186, 189, 174, 675],
                   fill: false,
                 },
                 {
-                  label: '2020',
+                  label: 'Año 2020',
                   fill: false,
                   backgroundColor: 'rgb(185, 99, 255)',
                   borderColor: 'rgb(185, 99, 255)',
-                  data: [375.0, 447.0,426.0,630.0, 783.0, 2652.0,4005.0, 4560.0, 6009.0, 4476.0, 6426.0, 2976.0],
+                  data: [375, 447, 426, 630, 783, 2652, 4005, 4560, 6009, 4476, 6426, 2976],
                 }]
           },
 
@@ -212,7 +213,7 @@
             responsive: true,
             title: {
               display: true,
-              text: 'Evolutivo Volumen Ventas'
+              text: 'Evolutivo Transacciones'
             },
             tooltips: {
               mode: 'index',
@@ -234,7 +235,7 @@
                 display: true,
                 scaleLabel: {
                   display: true,
-                  labelString: 'Ventas (Millones)'
+                  labelString: 'Transacciones'
                 }
               }]
             }
@@ -242,12 +243,10 @@
       });
     </script>
 
-
- 
-<script>
-  /*********************/
-  var ctx = document.getElementById('pk1depar').getContext('2d');
-  var chart = new Chart(ctx, {
+    <!--CHART EVOLUTIVO GANANCIAS-->
+    <script>
+      var ctx = document.getElementById('line-chart-eg').getContext('2d');
+      var chart = new Chart(ctx, {
           // The type of chart we want to create
           type: 'line',
 
@@ -255,18 +254,18 @@
           data: {
               labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
               datasets: [{
-                  label: '2019',
+                  label: 'Año 2019',
                   backgroundColor: 'rgb(255, 99, 132)',
                   borderColor: 'rgb(255, 99, 132)',
-                  data: [0, 0, 0, 0, 0, 57,0, 234.0, 180.0, 186.0, 189.0, 174.0, 675.0],
+                  data: [0, 0, 0, 0, 0, 120, 576, 324, 276, 392, 200, 1900],
                   fill: false,
                 },
                 {
-                  label: '2020',
+                  label: 'Año 2020',
                   fill: false,
                   backgroundColor: 'rgb(185, 99, 255)',
                   borderColor: 'rgb(185, 99, 255)',
-                  data: [375.0, 447.0,426.0,630.0, 783.0, 2652.0,4005.0, 4560.0, 6009.0, 4476.0, 6426.0, 2976.0],
+                  data: [1548, 1264, 876, 368, 396, 968, 3024, 3180, 3680, 2516, 4788, 2408],
                 }]
           },
 
@@ -275,7 +274,7 @@
             responsive: true,
             title: {
               display: true,
-              text: 'Evolutivo Volumen Ventas'
+              text: 'Evolutivo Ganancias Totales'
             },
             tooltips: {
               mode: 'index',
@@ -297,159 +296,457 @@
                 display: true,
                 scaleLabel: {
                   display: true,
-                  labelString: 'Ventas (Millones)'
+                  labelString: 'Ganancias'
                 }
               }]
             }
           }
       });
+    </script>
+
+    <!--SCRIPTS KPI 3: GANANCIAS-->
+    <!--GANANCIA ANUAL SEGUN DPTO-->
+    <script>
+      var ctx = document.getElementById('bc-gan-dep').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'horizontalBar',
+          data: {
+            labels: ['ANCASH ', 'APURIMAC', 'AREQUIPA', 'AYACUCHO', 'CAJAMARCA', 'CALLAO', 'CUSCO','HUANUCO','ICA','JUNIN','LA LIBERTAD','LAMBAYEQUE','LIMA','LORETO','MOQUEGUA','PIURA','TACNA','TUMBES'],
+            datasets: [{
+              label: '2019',
+              backgroundColor: 'rgb(243, 236, 9)',
+              borderColor: 'rgb(243, 236, 9)',
+              borderWidth: 1,
+              data: [0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,2416,0,0,0,1372,0]
+            }, {
+                  label: '2020',
+                  backgroundColor: 'rgb(255, 120, 43)',
+                  borderColor: 'rgb(255, 120, 43)',
+                  data: [60, 112, 3760, 0, 2072, 544, 0,0,1776,64,0,5072,7816,0,0,2196,1036,0]
+            }]
+          },
+
+          // Configuration options go here
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Ganancias Anuales Vs. Departamentos'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: false,
+            },
+            scales:{
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Ganancias'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Departamentos'
+                }
+              }]
+            }
+          }
+      });
+    </script>
+    <!--GANANCIA SEGUN DEPARTAMENTO-->
+    <script>
+      var ctx = document.getElementById('bc-gan-dep_2').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'doughnut',
+          data: {
+            datasets: [{
+                        data: [60,112,3760,0,2072,544,0,0,1776,64,0,5072,10232,0,0,2196,2408,0],
+                        backgroundColor: [
+                          'rgba(122, 243, 9)',
+                          'rgba(243, 151, 9)',
+                          'rgba(9, 243, 218)',
+                          'rgba(9, 76, 243 )',
+                          'rgba(98, 9, 243)',
+                          'rgba(243, 9, 236)',
+                          'rgba(243, 9, 147)',
+                          'rgba(241, 31, 85)',
+                          'rgba(242, 239, 180)',
+                          'rgba(124, 157, 92)',
+                          'rgba(92, 157, 150)',
+                          'rgba(30, 73, 69)',
+                          'rgba(104, 139, 181)',
+                          'rgba(38, 76, 122)',
+                          'rgba(143, 136, 209)',
+                          'rgba(178, 139, 204)',
+                          'rgba(167, 125, 65)',
+                          'rgba(165, 43, 39 )'
+                        ],
+                        label: 'Dataset 1'
+                      }],
+            labels: ['ANCASH ', 'APURIMAC', 'AREQUIPA', 'AYACUCHO', 'CAJAMARCA', 'CALLAO', 'CUSCO','HUANUCO','ICA','JUNIN','LA LIBERTAD','LAMBAYEQUE','LIMA','LORETO','MOQUEGUA','PIURA','TACNA','TUMBES']
+          },
+
+          // Configuration options go here
+          options: {
+            responsive: true,
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'Ganancias por Departamentos'
+            },
+            animation: {
+              animateScale: true,
+              animateRotate: true
+            }
+          }
+      });
+    </script>
+    <!--CLIENTE-->
+
+
+    <!--KPI1 Y Y 2-->
+    <script>
+      /***************KPI1 VENTASSSS*******************/
+    //Redondear
+    function redondear(arreglo,decimales){
     
-</script>
-
-<script>
-  /***************KPI1 VENTASSSS*******************/
-//Redondear
-function redondear(arreglo,decimales){
-
-  for(let i=0; i<arreglo.length;i++){
-    arreglo[i]=Math.round(arreglo[i] * (10^(decimales))) / (10^(decimales))
-  }
-  return arreglo
-}
-
-vvxDepartamento= [27608.463967716005,
-                7224.23216796,
-                3425.76228003,
-                825.781410897,
-                762.2711712206101,
-                435.3043496391,
-                388.332,
-                366.78,
-                266.929920591,
-                206.14043996999993,
-                191.94,
-                142.28141999700003,
-                115.983,
-                87.73418993969997,
-                83.3403,
-                8.55,
-                3.3,
-                0.06]
-  canales=['Personal','Internet','Ventanilla']             
-  vvxCanal2019=[250.524,195.315,78.0]
-  vvxCanal2020=[1233.0650394899997,34128.5661103304,6409.339017989999]
-
-  vvxDepartamento=redondear(vvxDepartamento,2)
-  vvxCanal2019=redondear(vvxCanal2019,2)
-  vvxCanal2020=redondear(vvxCanal2020,2)
-
-  
-
- new Chart(document.getElementById("bar-chartvvxDepa"), {
-      type: 'horizontalBar',
-      data: {
-        labels: ['LIMA', 'CAJAMARCA', 'LAMBAYEQUE', 'AREQUIPA', 'AYACUCHO', 'ICA', 'TACNA', 'ANCASH', 'CALLAO', 'PIURA', 'MOQUEGUA', 'HUANUCO', 'LA LIBERTAD', 'APURIMAC', 'JUNIN', 'LORETO', 'CUSCO', 'TUMBES'],
-        datasets: [
-          {
-            label: "Population (millions)",
-            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f"],
-            data:vvxDepartamento
-          }
-        ]
-      },
-      options: {
-        legend: { display: false },
-        title: {
-          display: true
-          //text: 'Predicted world population (millions) in 2050'
-        }
+      for(let i=0; i<arreglo.length;i++){
+        arreglo[i]=Math.round(arreglo[i] * (10^(decimales))) / (10^(decimales))
       }
-  });
-
-
-
-  new Chart(document.getElementById("bar-chart-vvxCanal"), {
-      type: 'bar',
-      data: {
-        labels: canales,
-        datasets: [
-          {
-            label: "2019",
-            backgroundColor: "#3e95cd",
-            data: vvxCanal2019
-          }, {
-            label: "2020",
-            backgroundColor: "#8e5ea2",
-            data: vvxCanal2020
-          }
-        ]
-      },
-      options: {
-        title: {
-          display: true
-         // text: 'Population growth (millions)'
-        }
-      }
-  });
-
-  //por zonal
-  zonal=['zonal_1', 'zonal_3', 'zonal_2']
-  vvxZonal=[912.4845300390001, 185.65568990970007, 21.432599699999997]
-  vvxZonal=redondear(vvxZonal,0)
-
-
-  new Chart(document.getElementById("pie-chart-vvxZonal"), {
-
-    type: 'pie',
-    data: {
-      labels: zonal,
-      datasets: [{
-        label: "Population (millions)",
-        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-        data: vvxZonal
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      },
-      cutoutPercentage:50
+      return arreglo
     }
-});
-
-//Por encargados
-Encargados = ['encargado_5', 'OTROS', 'encargado_13', 'encargado_10', 'encargado_11', 'encargado_1', 'encargado_2', 'encargado_8', 'encargado_14', 'encargado_21', 'encargado_6', 'encargado_23', 'encargado_22', 'encargado_18', 'encargado_16', 'encargado_17', 'encargado_12', 'encargado_15', 'encargado_19', 'encargado_7', 'encargado_9', 'encargado_20', 'encargado_3', 'encargado_4']
-vvxEncargados = [28174.838078001, 9786.789420811807, 2739.0608388299997, 352.602, 206.55, 179.154, 155.301, 145.91280002961, 142.430700261, 123.47619006000001, 109.275419997, 43.398599700000005, 41.25984003, 30.825, 22.95, 22.75128009, 8.4, 8.1, 1.08, 0.6, 0.03, 0.015, 0.006, 0.003]
-
-vvxEncargados= redondear(vvxEncargados,1);      
-
-new Chart(document.getElementById("bar-chartvvxEncargado"), {
-      type: 'horizontalBar',
-      data: {
-        labels: Encargados,
-        datasets: [
-          {
-            label: "Population (millions)",
-            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f"],
-            data:vvxEncargados
+    
+    vvxDepartamento= [27608.463967716005,
+                    7224.23216796,
+                    3425.76228003,
+                    825.781410897,
+                    762.2711712206101,
+                    435.3043496391,
+                    388.332,
+                    366.78,
+                    266.929920591,
+                    206.14043996999993,
+                    191.94,
+                    142.28141999700003,
+                    115.983,
+                    87.73418993969997,
+                    83.3403,
+                    8.55,
+                    3.3,
+                    0.06]
+      canales=['Personal','Internet','Ventanilla']             
+      vvxCanal2019=[250.524,195.315,78.0]
+      vvxCanal2020=[1233.0650394899997,34128.5661103304,6409.339017989999]
+    
+      vvxDepartamento=redondear(vvxDepartamento,2)
+      vvxCanal2019=redondear(vvxCanal2019,2)
+      vvxCanal2020=redondear(vvxCanal2020,2)
+    
+      
+    
+     new Chart(document.getElementById("bar-chartvvxDepa"), {
+          type: 'horizontalBar',
+          data: {
+            labels: ['LIMA', 'CAJAMARCA', 'LAMBAYEQUE', 'AREQUIPA', 'AYACUCHO', 'ICA', 'TACNA', 'ANCASH', 'CALLAO', 'PIURA', 'MOQUEGUA', 'HUANUCO', 'LA LIBERTAD', 'APURIMAC', 'JUNIN', 'LORETO', 'CUSCO', 'TUMBES'],
+            datasets: [
+              {
+                label: "Population (millions)",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f"],
+                data:vvxDepartamento
+              }
+            ]
+          },
+          options: {
+            legend: { display: false },
+            title: {
+              display: true
+              //text: 'Predicted world population (millions) in 2050'
+            }
           }
-        ]
-      },
-      options: {
-        legend: { display: false },
-        title: {
-          display: true
-          //text: 'Predicted world population (millions) in 2050'
+      });
+    
+    
+    
+      new Chart(document.getElementById("bar-chart-vvxCanal"), {
+          type: 'bar',
+          data: {
+            labels: canales,
+            datasets: [
+              {
+                label: "2019",
+                backgroundColor: "#3e95cd",
+                data: vvxCanal2019
+              }, {
+                label: "2020",
+                backgroundColor: "#8e5ea2",
+                data: vvxCanal2020
+              }
+            ]
+          },
+          options: {
+            title: {
+              display: true
+             // text: 'Population growth (millions)'
+            }
+          }
+      });
+    
+      //por zonal
+      zonal=['zonal_1', 'zonal_3', 'zonal_2']
+      vvxZonal=[912.4845300390001, 185.65568990970007, 21.432599699999997]
+      vvxZonal=redondear(vvxZonal,0)
+    
+    
+      new Chart(document.getElementById("pie-chart-vvxZonal"), {
+    
+        type: 'pie',
+        data: {
+          labels: zonal,
+          datasets: [{
+            label: "Population (millions)",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+            data: vvxZonal
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            //text: 'Predicted world population (millions) in 2050'
+          },
+          cutoutPercentage:50
         }
+    });
+    
+    //Por encargados
+    Encargados = ['encargado_5', 'OTROS', 'encargado_13', 'encargado_10', 'encargado_11', 'encargado_1', 'encargado_2', 'encargado_8', 'encargado_14', 'encargado_21', 'encargado_6', 'encargado_23', 'encargado_22', 'encargado_18', 'encargado_16', 'encargado_17', 'encargado_12', 'encargado_15', 'encargado_19', 'encargado_7', 'encargado_9', 'encargado_20', 'encargado_3', 'encargado_4']
+    vvxEncargados = [28174.838078001, 9786.789420811807, 2739.0608388299997, 352.602, 206.55, 179.154, 155.301, 145.91280002961, 142.430700261, 123.47619006000001, 109.275419997, 43.398599700000005, 41.25984003, 30.825, 22.95, 22.75128009, 8.4, 8.1, 1.08, 0.6, 0.03, 0.015, 0.006, 0.003]
+    
+    vvxEncargados= redondear(vvxEncargados,1);      
+    
+    new Chart(document.getElementById("bar-chartvvxEncargado"), {
+          type: 'horizontalBar',
+          data: {
+            labels: Encargados,
+            datasets: [
+              {
+                label: "Population (millions)",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f"],
+                data:vvxEncargados
+              }
+            ]
+          },
+          options: {
+            legend: { display: false },
+            title: {
+              display: true
+              //text: 'Predicted world population (millions) in 2050'
+            }
+          }
+      });
+    
+    
+    
+    
+    </script> 
+    <script>
+      /***************KPI2 TRANSACCIONES*******************/
+    //Redondear
+    function redondear(arreglo,decimales){
+    
+      for(let i=0; i<arreglo.length;i++){
+        arreglo[i]=Math.round(arreglo[i] * (10^(decimales))) / (10^(decimales))
       }
-  });
-
-
-
-
-</script> 
-
+      return arreglo
+    }
+    
+    transxDepartamento= [16533,
+                      4263,
+                      3162,
+                      2841,
+                      2100,
+                      1896,
+                      1548,
+                      1287,
+                      546,
+                      342,
+                      231,
+                      132,
+                      123,
+                      42,
+                      42,
+                      27,
+                      12,
+                      3]
+    
+    
+     
+      
+    
+      
+    
+     new Chart(document.getElementById("bar-charttransxDepa"), {
+          type: 'horizontalBar',
+          data: {
+            labels: ['LIMA', 'LAMBAYEQUE','AREQUIPA','ICA','APURIMAC','TACNA','PIURA','AYACUCHO','CALLAO','CAJAMARCA','JUNIN','ANCASH','HUANUCO','LA LIBERTAD','LORETO','MOQUEGUA','CUSCO','TUMBES'],
+            datasets: [
+              {
+                label: "Population (millions)",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f"],
+                data: transxDepartamento
+              }
+            ]
+          },
+          options: {
+            legend: { display: false },
+            title: {
+              display: true
+              //text: 'Predicted world population (millions) in 2050'
+            }
+          }
+      });
+    
+      canales=['Personal','Internet','Ventanilla']             
+      transxCanal2019=[783,618,294]
+      transxCanal2020=[8976,23391,1398]
+    
+      new Chart(document.getElementById("bar-chart-transxCanal"), {
+          type: 'bar',
+          data: {
+            labels: canales,
+            datasets: [
+              {
+                label: "2019",
+                backgroundColor: "#3e95cd",
+                data: transxCanal2019
+              }, {
+                label: "2020",
+                backgroundColor: "#8e5ea2",
+                data: transxCanal2020
+              }
+            ]
+          },
+          options: {
+            title: {
+              display: true
+             // text: 'Population growth (millions)'
+            }
+          }
+      });
+    
+      //por zonal
+      zonal=['zonal_1', 'zonal_3', 'zonal_2']
+      transxZonal=[33,3783, 8544]
+      //transxZonal=redondear(vvxZonal,0)
+    
+    
+      new Chart(document.getElementById("pie-chart-transxZonal"), {
+    
+        type: 'pie',
+        data: {
+          labels: zonal,
+          datasets: [{
+            label: "Population (millions)",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+            data: transxZonal
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            //text: 'Predicted world population (millions) in 2050'
+          },
+          cutoutPercentage:50
+        }
+    });
+    
+    //Por encargados
+    transEncargados = ['OTROS',
+     'encargado_5',
+     'encargado_10',
+     'encargado_13',
+     'encargado_2',
+     'encargado_14',
+     'encargado_8',
+     'encargado_21',
+     'encargado_15',
+     'encargado_17',
+     'encargado_6',
+     'encargado_23',
+     'encargado_22',
+     'encargado_16',
+     'encargado_1',
+     'encargado_11',
+     'encargado_18',
+     'encargado_7',
+     'encargado_12',
+     'encargado_4',
+     'encargado_3',
+     'encargado_20',
+     'encargado_19',
+     'encargado_9']
+    transxEncargados = [23661,
+     7632,
+     1221,
+     1017,
+     492,
+     309,
+     297,
+     174,
+     150,
+     117,
+     108,
+     84,
+     69,
+     57,
+     21,
+     18,
+     12,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3]
+    
+    //vvxEncargados= redondear(vvxEncargados,1);      
+    
+    new Chart(document.getElementById("bar-charttransxEncargado"), {
+          type: 'horizontalBar',
+          data: {
+            labels: transEncargados,
+            datasets: [
+              {
+                label: "Population (millions)",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f"],
+                data:transxEncargados
+              }
+            ]
+          },
+          options: {
+            legend: { display: false },
+            title: {
+              display: true
+              //text: 'Predicted world population (millions) in 2050'
+            }
+          }
+      });
+    
+    
+    
+    
+    </script> 
     
   
 
