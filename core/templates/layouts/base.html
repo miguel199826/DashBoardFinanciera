@@ -412,7 +412,204 @@
           }
       });
     </script>
+    <!--GANANCIA POR CANAL-->
+    <script>
+      canal=['Personal','Internet','Ventanilla']             
+      ganxCanal2019=[1044,0,2744]
+      ganxCanal2020=[11968,0,13048]
+    
+      new Chart(document.getElementById("bc-gan-can"), {
+          type: 'bar',
+          data: {
+            labels: canal,
+            datasets: [
+              {
+                label: "2019",
+                backgroundColor: "#3e95cd",
+                data: ganxCanal2019
+              }, {
+                label: "2020",
+                backgroundColor: "#8e5ea2",
+                data: ganxCanal2020
+              }
+            ]
+          },
+          options: {
+            title: {
+              display: true
+             // text: 'Population growth (millions)'
+            }
+          }
+      });
+    </script>
+
+    <!--encargado por departamento-->
+    <!--GANANCIA SEGUN DEPARTAMENTO-->
+    <script>
+      var ctx = document.getElementById('pie-encarg-dpto').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'doughnut',
+          data: {
+            datasets: [{
+                        data: [3,2,4,3,2,15,2,1],
+                        backgroundColor: [
+                          'rgba(122, 243, 9)',
+                          'rgba(243, 151, 9)',
+                          'rgba(9, 243, 218)',
+                          'rgba(9, 76, 243 )',
+                          'rgba(98, 9, 243)',
+                          'rgba(243, 9, 236)',
+                          'rgba(243, 9, 147)',
+                          'rgba(241, 31, 85)',
+                          'rgba(242, 239, 180)',
+                          'rgba(124, 157, 92)',
+                          'rgba(92, 157, 150)',
+                          'rgba(30, 73, 69)',
+                          'rgba(104, 139, 181)',
+                          'rgba(38, 76, 122)',
+                          'rgba(143, 136, 209)',
+                          'rgba(178, 139, 204)',
+                          'rgba(167, 125, 65)',
+                          'rgba(165, 43, 39 )'
+                        ],
+                        label: 'Dataset 1'
+                      }],
+            labels: ['AREQUIPA','CAJAMARCA', 'CALLAO','ICA','LAMBAYEQUE','LIMA','PIURA','TACNA']
+          },
+
+          // Configuration options go here
+          options: {
+            responsive: true,
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'Encargados por Departamentos'
+            },
+            animation: {
+              animateScale: true,
+              animateRotate: true
+            }
+          }
+      });
+    </script>
+
+    <!--GANANCIA SEGUN encargado-->
+    <script>
+      dpto=['AREQUIPA','CAJAMARCA', 'CALLAO','ICA','LAMBAYEQUE','LIMA','PIURA','TACNA']             
+      ganotros=[2064,112,252,1628,5048,7592,2196,2408]
+      ganoe5=[0,1960,16,0,0,1396,0,0]
+      ganoe10=[1628,0,0,0,0,0,0,0]
+      ganoe13=[0,0,0,0,24,0,0,0]
+      ganoe2=[0,0,0,0,0,1244,0,0]
+      ganoe14=[0,0,220,0,0,0,0,0]
+      ganoe15=[0,0,0,148,0,0,0,0]
+      ganoe16=[0,0,56,0,0,0,0,0]
+
+      new Chart(document.getElementById("bc-gan-encarg"), {
+          type: 'bar',
+          data: {
+            labels: dpto,
+            datasets: [
+              {
+                label: "OTROS",
+                backgroundColor: 'rgba(243, 9, 236)',
+                data: ganotros
+              }, {
+                label: "encargado_5",
+                backgroundColor: 'rgba(241, 31, 85)',
+                data: ganoe5
+              }, {
+                label: "encargado_10",
+                backgroundColor: 'rgba(104, 139, 181)',
+                data: ganoe10
+              }, {
+                label: "encargado_13",
+                backgroundColor: 'rgba(165, 43, 39 )',
+                data: ganoe13
+              }, {
+                label: "encargado_2",
+                backgroundColor: 'rgba(30, 73, 69)',
+                data: ganoe2
+              }, {
+                label: "encargado_14",
+                backgroundColor: 'rgba(98, 9, 243)',
+                data: ganoe14
+              }, {
+                label: "encargado_15",
+                backgroundColor: 'rgba(92, 157, 150)',
+                data: ganoe15
+              }, {
+                label: "encargado_16",
+                backgroundColor: 'rgba(9, 76, 243 )',
+                data: ganoe16
+              }
+            ]
+          },
+          options: {
+            title: {
+              display: true
+             // text: 'Population growth (millions)'
+            }
+          }
+      });
+    </script>
+    
     <!--CLIENTE-->
+    <script>
+      var ctx = document.getElementById('bc-cliente-1').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'bar',
+
+          // The data for our dataset
+          data: {
+              labels: ['cliente_8','cliente_16', 'cliente_58', 'cliente_125', 'cliente_167', 'cliente_190', 'cliente_221', 'cliente_227', 'cliente_231', 'cliente_234'],
+              datasets: [{
+                  label: 'Volumen Ventas',
+                  backgroundColor: 'rgb(255, 99, 132)',
+                  data: [692, 209,239,96,74, 105, 1171, 109, 215, 82],
+                }
+              ]
+          },
+
+          // Configuration options go here
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Top 10 clientes'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: false,
+            },
+            scales:{
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Cliente'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Volumen Ventas (MM)'
+                }
+              }]
+            }
+          }
+      });
+    </script>
+
 
 
     <!--KPI1 Y Y 2-->
