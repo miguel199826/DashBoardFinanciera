@@ -121,6 +121,7 @@
     <!-- Specific Page JS goes HERE -->
     {% block javascripts %}{% endblock javascripts %}
     
+    <!--CHART VOLUMEN VENTAS-->
     <script>
       var ctx = document.getElementById('line-chart-vv').getContext('2d');
       var chart = new Chart(ctx, {
@@ -181,6 +182,7 @@
       });
     </script>
 
+    <!--CHART EVOLUTIVO TRANSACCION-->
     <script>
       var ctx = document.getElementById('line-chart-et').getContext('2d');
       var chart = new Chart(ctx, {
@@ -241,6 +243,7 @@
       });
     </script>
 
+    <!--CHART EVOLUTIVO GANANCIAS-->
     <script>
       var ctx = document.getElementById('line-chart-eg').getContext('2d');
       var chart = new Chart(ctx, {
