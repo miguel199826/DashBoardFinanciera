@@ -121,6 +121,7 @@
     <!-- Specific Page JS goes HERE -->
     {% block javascripts %}{% endblock javascripts %}
     
+
     <script>
       var ctx = document.getElementById('line-chart-vv').getContext('2d');
       var chart = new Chart(ctx, {
@@ -180,7 +181,7 @@
           }
       });
     </script>
-
+ 
     <script>
       var ctx = document.getElementById('line-chart-et').getContext('2d');
       var chart = new Chart(ctx, {
@@ -189,57 +190,268 @@
 
           // The data for our dataset
           data: {
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
               datasets: [{
-                  label: 'My First dataset',
+                  label: '2019',
                   backgroundColor: 'rgb(255, 99, 132)',
                   borderColor: 'rgb(255, 99, 132)',
-                  data: [2, 10, 5, 2, 20, 30, 45],
+                  data: [0, 0, 0, 0, 0, 57,0, 234.0, 180.0, 186.0, 189.0, 174.0, 675.0],
                   fill: false,
                 },
                 {
-                  label: 'My Second dataset',
+                  label: '2020',
                   fill: false,
                   backgroundColor: 'rgb(185, 99, 255)',
                   borderColor: 'rgb(185, 99, 255)',
-                  data: [24, 13, 32, 12, 30, 50, 65],
+                  data: [375.0, 447.0,426.0,630.0, 783.0, 2652.0,4005.0, 4560.0, 6009.0, 4476.0, 6426.0, 2976.0],
                 }]
           },
 
           // Configuration options go here
-          options: {}
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Evolutivo Volumen Ventas'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: false,
+            },
+            scales:{
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Mes'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Ventas (Millones)'
+                }
+              }]
+            }
+          }
       });
     </script>
 
-    <script>
-      var ctx = document.getElementById('line-chart-eg').getContext('2d');
-      var chart = new Chart(ctx, {
+
+ 
+<script>
+  /*********************/
+  var ctx = document.getElementById('pk1depar').getContext('2d');
+  var chart = new Chart(ctx, {
           // The type of chart we want to create
           type: 'line',
 
           // The data for our dataset
           data: {
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
               datasets: [{
-                  label: 'My First dataset',
+                  label: '2019',
                   backgroundColor: 'rgb(255, 99, 132)',
                   borderColor: 'rgb(255, 99, 132)',
-                  data: [2, 10, 5, 2, 20, 30, 45],
+                  data: [0, 0, 0, 0, 0, 57,0, 234.0, 180.0, 186.0, 189.0, 174.0, 675.0],
                   fill: false,
                 },
                 {
-                  label: 'My Second dataset',
+                  label: '2020',
                   fill: false,
                   backgroundColor: 'rgb(185, 99, 255)',
                   borderColor: 'rgb(185, 99, 255)',
-                  data: [24, 13, 32, 12, 30, 50, 65],
+                  data: [375.0, 447.0,426.0,630.0, 783.0, 2652.0,4005.0, 4560.0, 6009.0, 4476.0, 6426.0, 2976.0],
                 }]
           },
 
           // Configuration options go here
-          options: {}
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Evolutivo Volumen Ventas'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: false,
+            },
+            scales:{
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Mes'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Ventas (Millones)'
+                }
+              }]
+            }
+          }
       });
-    </script>
+    
+</script>
+
+<script>
+  /***************KPI1 VENTASSSS*******************/
+//Redondear
+function redondear(arreglo,decimales){
+
+  for(let i=0; i<arreglo.length;i++){
+    arreglo[i]=Math.round(arreglo[i] * (10^(decimales))) / (10^(decimales))
+  }
+  return arreglo
+}
+
+vvxDepartamento= [27608.463967716005,
+                7224.23216796,
+                3425.76228003,
+                825.781410897,
+                762.2711712206101,
+                435.3043496391,
+                388.332,
+                366.78,
+                266.929920591,
+                206.14043996999993,
+                191.94,
+                142.28141999700003,
+                115.983,
+                87.73418993969997,
+                83.3403,
+                8.55,
+                3.3,
+                0.06]
+  canales=['Personal','Internet','Ventanilla']             
+  vvxCanal2019=[250.524,195.315,78.0]
+  vvxCanal2020=[1233.0650394899997,34128.5661103304,6409.339017989999]
+
+  vvxDepartamento=redondear(vvxDepartamento,2)
+  vvxCanal2019=redondear(vvxCanal2019,2)
+  vvxCanal2020=redondear(vvxCanal2020,2)
+
+  
+
+ new Chart(document.getElementById("bar-chartvvxDepa"), {
+      type: 'horizontalBar',
+      data: {
+        labels: ['LIMA', 'CAJAMARCA', 'LAMBAYEQUE', 'AREQUIPA', 'AYACUCHO', 'ICA', 'TACNA', 'ANCASH', 'CALLAO', 'PIURA', 'MOQUEGUA', 'HUANUCO', 'LA LIBERTAD', 'APURIMAC', 'JUNIN', 'LORETO', 'CUSCO', 'TUMBES'],
+        datasets: [
+          {
+            label: "Population (millions)",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f"],
+            data:vvxDepartamento
+          }
+        ]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true
+          //text: 'Predicted world population (millions) in 2050'
+        }
+      }
+  });
+
+
+
+  new Chart(document.getElementById("bar-chart-vvxCanal"), {
+      type: 'bar',
+      data: {
+        labels: canales,
+        datasets: [
+          {
+            label: "2019",
+            backgroundColor: "#3e95cd",
+            data: vvxCanal2019
+          }, {
+            label: "2020",
+            backgroundColor: "#8e5ea2",
+            data: vvxCanal2020
+          }
+        ]
+      },
+      options: {
+        title: {
+          display: true
+         // text: 'Population growth (millions)'
+        }
+      }
+  });
+
+  //por zonal
+  zonal=['zonal_1', 'zonal_3', 'zonal_2']
+  vvxZonal=[912.4845300390001, 185.65568990970007, 21.432599699999997]
+  vvxZonal=redondear(vvxZonal,0)
+
+
+  new Chart(document.getElementById("pie-chart-vvxZonal"), {
+
+    type: 'pie',
+    data: {
+      labels: zonal,
+      datasets: [{
+        label: "Population (millions)",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        data: vvxZonal
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      },
+      cutoutPercentage:50
+    }
+});
+
+//Por encargados
+Encargados = ['encargado_5', 'OTROS', 'encargado_13', 'encargado_10', 'encargado_11', 'encargado_1', 'encargado_2', 'encargado_8', 'encargado_14', 'encargado_21', 'encargado_6', 'encargado_23', 'encargado_22', 'encargado_18', 'encargado_16', 'encargado_17', 'encargado_12', 'encargado_15', 'encargado_19', 'encargado_7', 'encargado_9', 'encargado_20', 'encargado_3', 'encargado_4']
+vvxEncargados = [28174.838078001, 9786.789420811807, 2739.0608388299997, 352.602, 206.55, 179.154, 155.301, 145.91280002961, 142.430700261, 123.47619006000001, 109.275419997, 43.398599700000005, 41.25984003, 30.825, 22.95, 22.75128009, 8.4, 8.1, 1.08, 0.6, 0.03, 0.015, 0.006, 0.003]
+
+vvxEncargados= redondear(vvxEncargados,1);      
+
+new Chart(document.getElementById("bar-chartvvxEncargado"), {
+      type: 'horizontalBar',
+      data: {
+        labels: Encargados,
+        datasets: [
+          {
+            label: "Population (millions)",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f"],
+            data:vvxEncargados
+          }
+        ]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true
+          //text: 'Predicted world population (millions) in 2050'
+        }
+      }
+  });
+
+
+
+
+</script> 
+
+    
+  
 
   </body>
 
