@@ -301,6 +301,116 @@
       });
     </script>
 
+    <!--SCRIPTS KPI 3: GANANCIAS-->
+    <!--GANANCIA ANUAL SEGUN DPTO-->
+    <script>
+      var ctx = document.getElementById('bc-gan-dep').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'horizontalBar',
+          data: {
+            labels: ['ANCASH ', 'APURIMAC', 'AREQUIPA', 'AYACUCHO', 'CAJAMARCA', 'CALLAO', 'CUSCO','HUANUCO','ICA','JUNIN','LA LIBERTAD','LAMBAYEQUE','LIMA','LORETO','MOQUEGUA','PIURA','TACNA','TUMBES'],
+            datasets: [{
+              label: '2019',
+              backgroundColor: 'rgb(243, 236, 9)',
+              borderColor: 'rgb(243, 236, 9)',
+              borderWidth: 1,
+              data: [0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,2416,0,0,0,1372,0]
+            }, {
+                  label: '2020',
+                  backgroundColor: 'rgb(255, 120, 43)',
+                  borderColor: 'rgb(255, 120, 43)',
+                  data: [60, 112, 3760, 0, 2072, 544, 0,0,1776,64,0,5072,7816,0,0,2196,1036,0]
+            }]
+          },
+
+          // Configuration options go here
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Ganancias Anuales Vs. Departamentos'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: false,
+            },
+            scales:{
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Ganancias'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Departamentos'
+                }
+              }]
+            }
+          }
+      });
+    </script>
+    <!--GANANCIA SEGUN DEPARTAMENTO-->
+    <script>
+      var ctx = document.getElementById('bc-gan-dep_2').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'doughnut',
+          data: {
+            datasets: [{
+                        data: [60,112,3760,0,2072,544,0,0,1776,64,0,5072,10232,0,0,2196,2408,0],
+                        backgroundColor: [
+                          'rgba(122, 243, 9)',
+                          'rgba(243, 151, 9)',
+                          'rgba(9, 243, 218)',
+                          'rgba(9, 76, 243 )',
+                          'rgba(98, 9, 243)',
+                          'rgba(243, 9, 236)',
+                          'rgba(243, 9, 147)',
+                          'rgba(241, 31, 85)',
+                          'rgba(242, 239, 180)',
+                          'rgba(124, 157, 92)',
+                          'rgba(92, 157, 150)',
+                          'rgba(30, 73, 69)',
+                          'rgba(104, 139, 181)',
+                          'rgba(38, 76, 122)',
+                          'rgba(143, 136, 209)',
+                          'rgba(178, 139, 204)',
+                          'rgba(167, 125, 65)',
+                          'rgba(165, 43, 39 )'
+                        ],
+                        label: 'Dataset 1'
+                      }],
+            labels: ['ANCASH ', 'APURIMAC', 'AREQUIPA', 'AYACUCHO', 'CAJAMARCA', 'CALLAO', 'CUSCO','HUANUCO','ICA','JUNIN','LA LIBERTAD','LAMBAYEQUE','LIMA','LORETO','MOQUEGUA','PIURA','TACNA','TUMBES']
+          },
+
+          // Configuration options go here
+          options: {
+            responsive: true,
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'Ganancias por Departamentos'
+            },
+            animation: {
+              animateScale: true,
+              animateRotate: true
+            }
+          }
+      });
+    </script>
+
+
   </body>
 
 </html>
